@@ -1,18 +1,3 @@
-/*
- * Copyright 2013 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package com.example.android.basicgesturedetect
 
 import android.annotation.TargetApi
@@ -30,7 +15,6 @@ object GestureListener {
     touchType match {
       case MotionEvent.TOOL_TYPE_FINGER =>
         touchTypeDescription += "(finger)"
-        break //todo: break is not supported
       case MotionEvent.TOOL_TYPE_STYLUS =>
         touchTypeDescription += "(stylus, "
         val stylusPressure: Float = e.getPressure
@@ -39,16 +23,12 @@ object GestureListener {
           touchTypeDescription += ", buttons pressed: " + getButtonsPressed(e)
         }
         touchTypeDescription += ")"
-        break //todo: break is not supported
       case MotionEvent.TOOL_TYPE_ERASER =>
         touchTypeDescription += "(eraser)"
-        break //todo: break is not supported
       case MotionEvent.TOOL_TYPE_MOUSE =>
         touchTypeDescription += "(mouse)"
-        break //todo: break is not supported
       case _ =>
         touchTypeDescription += "(unknown tool)"
-        break //todo: break is not supported
     }
     return touchTypeDescription
   }
